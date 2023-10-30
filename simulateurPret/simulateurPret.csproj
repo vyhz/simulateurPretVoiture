@@ -63,6 +63,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classe\Annee.cs" />
+    <Compile Include="Classe\CalculTaux.cs" />
+    <Compile Include="Classe\Energie.cs" />
+    <Compile Include="Classe\Kilometre.cs" />
+    <Compile Include="Classe\Personne.cs" />
+    <Compile Include="Classe\Voiture.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -93,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\fondEcologique2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

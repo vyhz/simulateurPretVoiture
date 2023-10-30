@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:simulateurPret"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Simulateur Prêt Voiture" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="image\fondEcologique2.jpg" />
+        </Grid.Background>
+        <ComboBox x:Name="VoitureType" HorizontalAlignment="Left" Margin="62,130,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="anneeType" HorizontalAlignment="Left" Margin="254,130,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="kilometrageType" HorizontalAlignment="Left" Margin="448,130,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="energieType" HorizontalAlignment="Left" Margin="640,130,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSimulation" Content="Simuler" HorizontalAlignment="Left" Margin="680,217,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="Simulation_Click"/>
+        <Label Content="SIMULATEUR DE PRET AUTOMOBILE 🚗" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Demi" Foreground="#FF14A313" FontSize="20"/>
+        <ComboBox x:Name="nbPersonne" HorizontalAlignment="Left" Margin="62,221,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
