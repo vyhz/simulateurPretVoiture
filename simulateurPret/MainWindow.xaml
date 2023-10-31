@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:simulateurPret"
         mc:Ignorable="d"
-        Title="Simulateur Prêt Voiture" Height="450" Width="800">
+        Title="Simulateur Prêt Voiture" Height="450" Width="800" ResizeMode="NoResize">
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="image\fondEcologique2.jpg" />
@@ -13,9 +14,19 @@
         <ComboBox x:Name="VoitureType" HorizontalAlignment="Left" Margin="62,130,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="anneeType" HorizontalAlignment="Left" Margin="254,130,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="kilometrageType" HorizontalAlignment="Left" Margin="448,130,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="energieType" HorizontalAlignment="Left" Margin="640,130,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSimulation" Content="Simuler" HorizontalAlignment="Left" Margin="680,217,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="Simulation_Click"/>
+        <ComboBox x:Name="energieType" HorizontalAlignment="Left" Margin="62,222,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSimulation" Content="Simuler 🌿" HorizontalAlignment="Left" Margin="637,232,0,0" VerticalAlignment="Top" Height="51" Width="123" Click="Simulation_Click"
+                       Foreground="White"
+                       FontFamily="Fonts/#Dosis"
+                       FontWeight="Medium" FontSize="20" 
+                       Background="#FF18B51C" BorderBrush="{x:Null}" BorderThickness="0,0,0,0"/>
         <Label Content="SIMULATEUR DE PRET AUTOMOBILE 🚗" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Demi" Foreground="#FF14A313" FontSize="20"/>
-        <ComboBox x:Name="nbPersonne" HorizontalAlignment="Left" Margin="62,221,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="nbPersonne" HorizontalAlignment="Left" Margin="254,222,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Type de véhicule :" HorizontalAlignment="Left" Margin="62,104,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Foreground="#FF6D8BFF" FontWeight="Bold"/>
+        <Label Content="Année du véhicule : " HorizontalAlignment="Left" Margin="254,104,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Foreground="#FF6D8BFF" FontWeight="Bold"/>
+        <Label Content="Kilométrage :" HorizontalAlignment="Left" Margin="448,104,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Foreground="#FF6D8BFF" FontWeight="Bold" Background="{x:Null}">
+        </Label>
+        <Label Content="Type d'énergie :" HorizontalAlignment="Left" Margin="62,198,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Foreground="#FF4168FF" FontWeight="Bold" Background="Transparent"/>
+        <Label Content="Nombre de personne :" HorizontalAlignment="Left" Margin="254,198,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Foreground="#FF476DFF" FontWeight="Bold"/>
     </Grid>
 </Window>
