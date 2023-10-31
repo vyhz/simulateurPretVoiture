@@ -126,6 +126,7 @@ namespace simulateurPret
             var energieItem = energieType.SelectedItem;
             var anneeItem = anneeType.SelectedItem;
             var personneItem = nbPersonne.SelectedItem;
+            int testeurCalcul = 0;
 
             #region calculKilometre
             // Vérifiez si l'élément n'est pas null (au cas où rien n'a été sélectionné)
@@ -140,10 +141,12 @@ namespace simulateurPret
                         pointTotal += kilometre.points; 
                     }
                 }
+                testeurCalcul += 1;
             }
             else
             {
                MessageBox.Show("Le champ kilomètre ne peut pas être vide. Veuillez le remplir.", "Erreur");
+                
             }
             #endregion
 
@@ -159,10 +162,12 @@ namespace simulateurPret
                         pointTotal += voiture.valeurs;
                     }
                 }
+                testeurCalcul += 1;
             }
             else
             {
                 MessageBox.Show("Le champ voiture ne peut pas être vide. Veuillez le remplir.", "Erreur");
+                
             }
             #endregion
 
@@ -178,6 +183,7 @@ namespace simulateurPret
                         pointTotal += energie.point;
                     }
                 }
+                testeurCalcul += 1;
             }
             else
             {
@@ -197,39 +203,43 @@ namespace simulateurPret
                         pointTotal += annee.points;
                     }
                 }
+                testeurCalcul += 1;
             }
             else
             {
                 MessageBox.Show("Le champ annee ne peut pas être vide. Veuillez le remplir.", "Erreur");
             }
             #endregion
-
-            CalculTaux calculTaux = new CalculTaux();
-
-            double taux = calculTaux.Calcul(pointTotal);
-
-            #region calculPersonne
-            if (personneItem != null)
+            if(testeurCalcul>=4)
             {
-                // Convertissez l'objet en type approprié (par exemple, string)
-                int personneValue = (int)personneItem;
-                foreach (var personne in personneElements)
+                CalculTaux calculTaux = new CalculTaux();
+
+                double taux = calculTaux.Calcul(pointTotal);
+
+                #region calculPersonne
+                if (personneItem != null)
                 {
-                    if (personne.nbPers == personneValue & personne.nbPers == 1)
+                    // Convertissez l'objet en type approprié (par exemple, string)
+                    int personneValue = (int)personneItem;
+                    foreach (var personne in personneElements)
                     {
-                        taux += personne.malusBonus;
+                        if (personne.nbPers == personneValue & personne.nbPers == 1)
+                        {
+                            taux += personne.malusBonus;
+                        }
+                        else if (personne.nbPers == personneValue & personne.nbPers > 1)
+                        {
+                            taux -= personne.malusBonus;
+                        }
                     }
-                    else if (personne.nbPers == personneValue & personne.nbPers > 1)
-                    {
-                        taux -= personne.malusBonus;
-                    }
+                    MessageBox.Show("Votre taux pour un Emprunt sera de : " + taux, "Résultat");
                 }
-                MessageBox.Show("Votre taux pour un Emprunt sera de : " + taux , "Résultat");
+                else
+                {
+                    MessageBox.Show("Le champ personne ne peut pas être vide. Veuillez le remplir.", "Erreur");
+                }
             }
-            else
-            {
-                MessageBox.Show("Le champ personne ne peut pas être vide. Veuillez le remplir.", "Erreur");
-            }
+            
             #endregion
 
 
